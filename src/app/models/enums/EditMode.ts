@@ -1,4 +1,4 @@
 export enum EditMode {
-    Preview,
-    Edit,
+    Preview = "Preview",
+    Edit = "Edit",
   }

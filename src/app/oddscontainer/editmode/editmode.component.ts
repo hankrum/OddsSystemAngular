@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { EditMode } from '../../models/enums/EditMode';
 
 @Component({
@@ -8,15 +8,22 @@ import { EditMode } from '../../models/enums/EditMode';
 })
 export class EditmodeComponent implements OnInit {
 
-  editMode: EditMode;
+  @Input() editMode: EditMode;
+  @Output() editModeChange = new EventEmitter();
+
+  editModeButtonText: string;
   
-  constructor() { }
+  constructor() { 
+    console.log(this.editMode);
+    this.editModeButtonText = this.editMode===EditMode.Preview ? EditMode.Edit : EditMode.Preview;
+  }
 
   ngOnInit() {
   }
 
   onEditMode() {
     this.editMode = this.editMode === EditMode.Preview ? EditMode.Edit : EditMode.Preview;
+    this.editModeButtonText = this.editMode===EditMode.Preview ? EditMode.Edit : EditMode.Preview;
   }
 
 }
