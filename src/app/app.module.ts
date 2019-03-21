@@ -7,6 +7,7 @@ import { PreviewComponent } from './oddscontainer/gridcontainer/preview/preview.
 import { EditmodeComponent } from './oddscontainer/editmode/editmode.component';
 import { OddscontainerComponent } from './oddscontainer/oddscontainer.component';
 import { GridcontainerComponent } from './oddscontainer/gridcontainer/gridcontainer.component';
+import { EditGridComponent } from './oddscontainer/gridcontainer/edit-grid/edit-grid.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GridcontainerComponent } from './oddscontainer/gridcontainer/gridcontai
     PreviewComponent,
     EditmodeComponent,
     OddscontainerComponent,
-    GridcontainerComponent
+    GridcontainerComponent,
+    EditGridComponent
   ],
   imports: [
     BrowserModule,

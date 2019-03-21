@@ -12,18 +12,19 @@ export class EditmodeComponent implements OnInit {
   @Output() editModeChange = new EventEmitter();
 
   editModeButtonText: string;
-  
-  constructor() { 
+
+  constructor() {
     console.log(this.editMode);
-    this.editModeButtonText = this.editMode===EditMode.Preview ? EditMode.Edit : EditMode.Preview;
+    this.editModeButtonText = this.editMode === EditMode.Preview ? EditMode.Edit : EditMode.Preview;
   }
 
   ngOnInit() {
+    this.editModeButtonText = this.editMode === EditMode.Preview ? EditMode.Edit : EditMode.Preview;
   }
 
   onEditMode() {
     this.editMode = this.editMode === EditMode.Preview ? EditMode.Edit : EditMode.Preview;
-    this.editModeButtonText = this.editMode===EditMode.Preview ? EditMode.Edit : EditMode.Preview;
+    this.editModeButtonText = this.editMode === EditMode.Preview ? EditMode.Edit : EditMode.Preview;
   }
 
 }

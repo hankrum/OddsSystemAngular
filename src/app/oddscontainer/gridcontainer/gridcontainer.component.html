@@ -1,3 +1,4 @@
-<p>
-  gridcontainer works!
-</p>
+<app-preview *ngIf="editMode==='Preview'; else elseBlock" [sportEvents]="sportEvents"></app-preview>
+<ng-template #elseBlock>
+  <app-edit-grid></app-edit-grid>
+</ng-template>
