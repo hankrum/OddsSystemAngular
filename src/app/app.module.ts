@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PreviewComponent } from './oddscontainer/gridcontainer/preview/preview.component';
+import { EditmodeComponent } from './oddscontainer/editmode/editmode.component';
+import { OddscontainerComponent } from './oddscontainer/oddscontainer.component';
+import { GridcontainerComponent } from './oddscontainer/gridcontainer/gridcontainer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PreviewComponent,
+    EditmodeComponent,
+    OddscontainerComponent,
+    GridcontainerComponent
   ],
   imports: [
     BrowserModule,
