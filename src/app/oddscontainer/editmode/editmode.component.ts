@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { EditMode } from '../../models/enums/EditMode';
+import { GridcontainerComponent } from '../gridcontainer/gridcontainer.component';
+import { EditModeService } from '../../edit-mode.service';
 
 @Component({
   selector: 'app-editmode',
@@ -8,22 +10,23 @@ import { EditMode } from '../../models/enums/EditMode';
 })
 export class EditmodeComponent implements OnInit {
 
-  @Input() editMode: EditMode;
-  @Output() editModeChange = new EventEmitter();
-
+  editMode: EditMode;
   editModeButtonText: string;
-  
-  constructor() { 
-    console.log(this.editMode);
-    this.editModeButtonText = this.editMode===EditMode.Preview ? EditMode.Edit : EditMode.Preview;
+
+  constructor(public editModeService: EditModeService) {
+    this.setEditMode();
+  }
+
+  setEditMode() {
+    this.editMode = this.editModeService.getMode();
+    this.editModeButtonText = this.editModeService.getButtonText();
   }
 
   ngOnInit() {
   }
 
-  onEditMode() {
-    this.editMode = this.editMode === EditMode.Preview ? EditMode.Edit : EditMode.Preview;
-    this.editModeButtonText = this.editMode===EditMode.Preview ? EditMode.Edit : EditMode.Preview;
+  onEditModeButton() {
+    this.editModeService.toggleMode();
+    this.setEditMode();
   }
-
 }

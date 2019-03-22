@@ -12,13 +12,4 @@ import { EditMode } from './models/enums/EditMode';
 export class AppComponent {
 
   title = 'odds-system-ui';
-
-  sportEvents: SportsEvent[] = [
-    new SportsEvent("Levski-CSKA", 2, 2, 2, new Date(2019, 1, 2)),
-    new SportsEvent("Grigor-Nole", 3, 4, 5, new Date(2019, 1, 2)),
-    new SportsEvent("Slavia-Loko", 2, 2, 2, new Date(2019, 1, 2)),
-  ];
-
-  editMode: EditMode = EditMode.Preview;
-
 }

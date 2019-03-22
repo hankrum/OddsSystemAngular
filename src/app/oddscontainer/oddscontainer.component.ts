@@ -9,12 +9,6 @@ import { EditMode } from '../models/enums/EditMode';
 })
 export class OddscontainerComponent implements OnInit {
 
-  @Input() editMode: EditMode;
-  @Output() editModeChange = new EventEmitter();
-
-  @Input() sportEvents: SportsEvent[];
-  @Output() sportEventsChange = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {
