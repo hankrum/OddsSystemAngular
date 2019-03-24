@@ -4,7 +4,7 @@ import { PreviewComponent } from './oddscontainer/gridcontainer/preview/preview.
 import { EditComponent } from './oddscontainer/gridcontainer/edit/edit.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/Preview", pathMatch: 'full' }, 
+  { path: "", redirectTo: "/Preview", pathMatch: 'full' },
   { path: "Preview", component: PreviewComponent },
   { path: "Edit", component: EditComponent }
 ];

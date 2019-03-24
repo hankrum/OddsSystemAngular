@@ -10,7 +10,7 @@ import { SportEventService } from '../../../sport-event.service';
 export class PreviewComponent implements OnInit {
   sportEvents: SportsEvent[];
 
-  constructor(public sportEventService: SportEventService) { 
+  constructor(public sportEventService: SportEventService) {
     this.sportEvents = this.sportEventService.getAll();
   }
 

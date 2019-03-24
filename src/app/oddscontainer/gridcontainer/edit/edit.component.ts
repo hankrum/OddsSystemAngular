@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SportsEvent } from 'src/app/models/SportsEvent.model';
+import { SportEventService } from 'src/app/sport-event.service';
 
 @Component({
   selector: 'app-edit',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
+  sportEvents: SportsEvent[];
+
+  constructor(public sportEventService: SportEventService) {
+    this.sportEvents = this.sportEventService.getAll();
+  }
 
   ngOnInit() {
   }
