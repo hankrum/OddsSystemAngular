@@ -9,6 +9,7 @@ import { OddscontainerComponent } from './oddscontainer/oddscontainer.component'
 import { GridcontainerComponent } from './oddscontainer/gridcontainer/gridcontainer.component';
 import { EditComponent } from './oddscontainer/gridcontainer/edit/edit.component';
 import { SportEventItemComponent } from './oddscontainer/gridcontainer/preview/sport-event-item/sport-event-item.component';
+import { EditSportEventItemComponent } from './oddscontainer/gridcontainer/edit/edit-sport-event-item/edit-sport-event-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SportEventItemComponent } from './oddscontainer/gridcontainer/preview/s
     OddscontainerComponent,
     GridcontainerComponent,
     EditComponent,
-    SportEventItemComponent
+    SportEventItemComponent,
+    EditSportEventItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,18 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th>EventId</th>
       <th>EventName</th>
       <th>OddsForFirstTeam</th>
       <th>OddsForDraw</th>
       <th>OddsForSecondTeam</th>
       <th>EventStartDate</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr app-sport-event-item *ngFor="let sportEventItem of sportEvents" [sportEventItem]="sportEventItem">
+    <tr app-edit-sport-event-item *ngFor="let sportEventItem of sportEvents" [sportEventItem]="sportEventItem">
     </tr>
   </tbody>
 </table>
