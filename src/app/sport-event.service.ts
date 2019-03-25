@@ -18,4 +18,8 @@ export class SportEventService {
   getAll() {
     return this.sportEvents;
   }
+
+  edit (sportEvent: SportsEvent): void {
+    this.sportEvents[sportEvent.eventId] = sportEvent; // TODO
+  }
 }
