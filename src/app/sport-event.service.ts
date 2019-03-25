@@ -19,7 +19,14 @@ export class SportEventService {
     return this.sportEvents;
   }
 
-  edit (sportEvent: SportsEvent): void {
-    this.sportEvents[sportEvent.eventId] = sportEvent; // TODO
+  edit(sportEvent: SportsEvent): void {
+    this.sportEvents[sportEvent.eventId - 1] = new SportsEvent(
+        sportEvent.eventId,
+        sportEvent.name,
+        sportEvent.oddsForFirstTeam,
+        sportEvent.oddsForDraw,
+        sportEvent.oddsForSecondTeam,
+        sportEvent.eventStartDate
+      ); // TODO
   }
 }

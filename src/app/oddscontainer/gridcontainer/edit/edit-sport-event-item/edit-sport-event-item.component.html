@@ -1,9 +1,14 @@
-<td>{{sportEventItem.eventId}}</td>
-<td>{{sportEventItem.name}}</td>
-<td>{{sportEventItem.oddsForFirstTeam}}</td>
-<td>{{sportEventItem.oddsForDraw}}</td>
-<td>{{sportEventItem.oddsForSecondTeam}}</td>
-<td>{{sportEventItem.eventStartDate}}</td>
+<td>
+  {{editSportEventItem.eventId}}
+</td>
+<td>
+  <input [(ngModel)]="editSportEventItem.name">
+  {{editSportEventItem.name}}
+</td>
+<td>{{editSportEventItem.oddsForFirstTeam}}</td>
+<td>{{editSportEventItem.oddsForDraw}}</td>
+<td>{{editSportEventItem.oddsForSecondTeam}}</td>
+<td>{{editSportEventItem.eventStartDate}}</td>
 <td>
   <button class="btn">
     Delete

@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { SportsEvent } from 'src/app/models/SportsEvent.model';
-import { SportEventService } from '../../../../sport-event.service';
+import { FormsModule } from '@angular/forms';
+import { SportEventService } from 'src/app/sport-event.service';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: '[app-edit-sport-event-item]',
@@ -9,7 +11,8 @@ import { SportEventService } from '../../../../sport-event.service';
 })
 export class EditSportEventItemComponent implements OnInit {
 
-  @Input() sportEventItem: SportsEvent;
+  @Input() editSportEventItem: SportsEvent;
+  // @Output() editSportEventItemChange = new EventEmitter();
 
   constructor(public sportEventService: SportEventService) { }
 
@@ -17,7 +20,7 @@ export class EditSportEventItemComponent implements OnInit {
   }
 
   save() {
-    this.sportEventService.edit(this.sportEventItem);
+    this.sportEventService.edit(this.editSportEventItem);
   }
 
 }
