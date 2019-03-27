@@ -23,4 +23,8 @@ export class EditSportEventItemComponent implements OnInit {
     this.sportEventService.edit(this.editSportEventItem);
   }
 
+  delete() {
+    this.sportEventService.delete(this.editSportEventItem);
+  }
+
 }

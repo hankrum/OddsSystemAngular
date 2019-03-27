@@ -29,4 +29,9 @@ export class SportEventService {
         sportEvent.eventStartDate
       ); // TODO
   }
+
+  delete(sportEvent:SportsEvent): void {
+    let pos: number = sportEvent.eventId - 1;
+    this.sportEvents = [...this.sportEvents.slice(0, pos), ...this.sportEvents.slice(pos+1)];
+  }
 }
