@@ -9,7 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr app-sport-event-item *ngFor="let sportEventItem of sportEvents" [sportEventItem]="sportEventItem">
+      <tr app-sport-event-item 
+        *ngFor="let sportEventItem of sportEvents; let i = index" 
+        [sportEventItem]="sportEventItem" 
+        [ngStyle]="{backgroundColor: getLineColor(i)}">
       </tr>
     </tbody>
   </table>

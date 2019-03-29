@@ -17,4 +17,14 @@ export class PreviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  getLineColor(lineNumber: number) {
+    let color: string = lineNumber % 2 === 0 ? "aliceblue" : "honeydew";
+    if (this.sportEvents[lineNumber].eventStartDate.getTime() < new Date().getTime() ) {
+      color = "lightsalmon";
+    }
+    console.log(color);
+
+    return color;
+  }
+
 }
