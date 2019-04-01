@@ -10,7 +10,7 @@ import { SportEventService } from '../../../sport-event.service';
 export class PreviewComponent implements OnInit {
   sportEvents: SportsEvent[];
 
-  constructor(public sportEventService: SportEventService) {
+  constructor(private sportEventService: SportEventService) {
     this.sportEvents = this.sportEventService.getAll();
   }
 
@@ -22,9 +22,7 @@ export class PreviewComponent implements OnInit {
     if (this.sportEvents[lineNumber].eventStartDate.getTime() < new Date().getTime() ) {
       color = "lightsalmon";
     }
-    console.log(color);
 
     return color;
   }
-
 }

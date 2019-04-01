@@ -14,7 +14,7 @@ export class EditSportEventItemComponent implements OnInit {
   @Input() editSportEventItem: SportsEvent;
   // @Output() editSportEventItemChange = new EventEmitter();
 
-  constructor(public sportEventService: SportEventService) { }
+  constructor(private sportEventService: SportEventService) { }
 
   ngOnInit() {
   }

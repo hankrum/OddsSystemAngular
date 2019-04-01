@@ -11,7 +11,7 @@ export class EditComponent implements OnInit {
 
   sportEvents: SportsEvent[];
 
-  constructor(public sportEventService: SportEventService) {
+  constructor(private sportEventService: SportEventService) {
     this.sportEvents = this.sportEventService.getAll();
   }
 

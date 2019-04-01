@@ -6,7 +6,7 @@ import { EditMode } from './models/enums/EditMode';
 })
 export class EditModeService {
   
-  editMode: EditMode = EditMode.Preview;
+  private editMode: EditMode = EditMode.Preview;
 
   constructor() { }
 
