@@ -8,9 +8,8 @@ import { PreviewComponent } from './oddscontainer/gridcontainer/preview/preview.
 import { EditmodeComponent } from './oddscontainer/editmode/editmode.component';
 import { OddscontainerComponent } from './oddscontainer/oddscontainer.component';
 import { GridcontainerComponent } from './oddscontainer/gridcontainer/gridcontainer.component';
-import { EditComponent } from './oddscontainer/gridcontainer/edit/edit.component';
 import { SportEventItemComponent } from './oddscontainer/gridcontainer/preview/sport-event-item/sport-event-item.component';
-import { EditSportEventItemComponent } from './oddscontainer/gridcontainer/edit/edit-sport-event-item/edit-sport-event-item.component';
+import { EditModule } from './oddscontainer/gridcontainer/edit/edit/edit.module';
 
 @NgModule({
   declarations: [
@@ -19,15 +18,16 @@ import { EditSportEventItemComponent } from './oddscontainer/gridcontainer/edit/
     EditmodeComponent,
     OddscontainerComponent,
     GridcontainerComponent,
-    EditComponent,
+    
     SportEventItemComponent,
-    EditSportEventItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    EditModule
   ],
+  //exports: [FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

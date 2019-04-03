@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SportsEvent } from './models/SportsEvent.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,14 @@ export class SportEventService {
     new SportsEvent(3, "Slavia-Loko", 2, 2, 2, new Date(2019, 1, 4)),
   ];
 
-  constructor() { }
+  sportEventsStream = new Subject<SportsEvent[]>();
+
+  constructor() {
+    this.sportEventsStream.next(this.sportEvents);
+  }
 
   getAll() {
-    return this.sportEvents;
+    return this.sportEvents.slice();
   }
 
   edit(sportEvent: SportsEvent): void {
@@ -28,10 +33,12 @@ export class SportEventService {
         sportEvent.oddsForSecondTeam,
         sportEvent.eventStartDate
       ); // TODO
-  }
+      this.sportEventsStream.next(this.sportEvents);
+    }
 
   delete(sportEvent:SportsEvent): void {
-    let pos: number = sportEvent.eventId - 1;
+    let pos: number = this.sportEvents.findIndex( se => se.eventId === sportEvent.eventId);
     this.sportEvents = [...this.sportEvents.slice(0, pos), ...this.sportEvents.slice(pos+1)];
+    this.sportEventsStream.next(this.sportEvents);
   }
 }

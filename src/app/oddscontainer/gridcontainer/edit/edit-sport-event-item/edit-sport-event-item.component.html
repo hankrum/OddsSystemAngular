@@ -8,7 +8,7 @@
 <td>{{editSportEventItem.oddsForFirstTeam}}</td>
 <td>{{editSportEventItem.oddsForDraw}}</td>
 <td>{{editSportEventItem.oddsForSecondTeam}}</td>
-<td>{{editSportEventItem.eventStartDate}}</td>
+<td>{{editSportEventItem.eventStartDate | date: "long"}}</td>
 <td>
   <button class="btn" (click)="delete()">
     Delete
